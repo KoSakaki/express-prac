@@ -1,6 +1,9 @@
 // var express = require('express');
 import express from 'express';
+import logger from './lib/logger.js';
 var app = express();
+
+app.use(logger);
 
 app.get("/", (req, res) => {
     console.log("listen");
