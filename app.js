@@ -6,9 +6,14 @@ var app = express();
 
 app.use(logger);
 
+app.set("view engine", "ejs");
+app.set('view options', {
+    layout: false
+});
+
 
 app.get("/", (req, res) => {
-    res.status(200).send("Hello World");
+    res.status(200).render("index.ejs", {title: "webアプリケーションの開発"});
 });
 app.get("/home/index", (req, res) => {
     res.status(200).send("OK");
